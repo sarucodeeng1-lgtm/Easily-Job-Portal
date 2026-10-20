@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { showApplyPage, submitApplication, showMyApplications, showApplicants, changeApplicationStatus, downloadResume } from '../controllers/application.controller.js';
+import { isRecruiter, isJobSeeker } from '../middleware/auth.js';
+import { uploadResume } from '../middleware/upload.js';
+const router = Router();
+router.get('/my-applications', isJobSeeker, showMyApplications);
+router.get('/jobs/:id/apply', isJobSeeker, showApplyPage);
+router.post('/jobs/:id/apply', isJobSeeker, uploadResume.single('resume'), submitApplication);
+router.get('/jobs/:id/applicants', isRecruiter, showApplicants);
+router.get('/applications/:applicationId/resume', isRecruiter, downloadResume);
+router.post('/jobs/:jobId/applicants/:applicationId/status', isRecruiter, changeApplicationStatus);
+export default router;

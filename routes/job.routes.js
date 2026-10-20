@@ -1,0 +1,13 @@
+import { Router } from 'express';
+import { showJobs, showJobDetails, showDashboard, showCreateJobPage, createJobPost, showUpdateJobPage, updateJobPost, deleteJobPost } from '../controllers/job.controller.js';
+import { isRecruiter } from '../middleware/auth.js';
+const router = Router();
+router.get('/jobs', showJobs);
+router.get('/jobs/new', isRecruiter, showCreateJobPage);
+router.post('/jobs', isRecruiter, createJobPost);
+router.get('/jobs/:id/edit', isRecruiter, showUpdateJobPage);
+router.post('/jobs/:id/edit', isRecruiter, updateJobPost);
+router.post('/jobs/:id/delete', isRecruiter, deleteJobPost);
+router.get('/jobs/:id', showJobDetails);
+router.get('/dashboard', isRecruiter, showDashboard);
+export default router;

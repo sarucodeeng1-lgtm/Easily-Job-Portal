@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#4f46e5">
+  <title><%= title ? `${title} | Easily` : 'Easily — Find Your Dream Job' %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="/" aria-label="Easily home"><span class="brand-mark">E</span> easily<span class="brand-dot">.</span></a>
+    <nav class="main-nav">
+      <a href="/jobs">Find jobs</a>
+      <% if (currentUser && currentUser.role === 'recruiter') { %><a href="/dashboard">Dashboard</a><a href="/jobs/new" class="nav-post">Post a job</a><% } %>
+      <% if (currentUser && currentUser.role === 'jobseeker') { %><a href="/my-applications">My applications</a><% } %>
+      <% if (currentUser) { %>
+        <span class="nav-user">Hi, <%= currentUser.name.split(' ')[0] %></span>
+        <form action="/logout" method="POST" class="inline-form"><button class="button button-ghost button-small" type="submit">Log out</button></form>
+      <% } else { %><a href="/login">Log in</a><a href="/register" class="button button-primary button-small">Get started</a><% } %>
+    </nav>
+  </div>
+</header>
+<main class="main-content">
+<% if (flash) { %><div class="flash flash-<%= flash.type %>" role="status"><%= flash.message %></div><% } %>

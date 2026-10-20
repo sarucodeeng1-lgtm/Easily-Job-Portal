@@ -1,0 +1,21 @@
+<%- include('partials/header', { title }) %>
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+    <h1>Find a job that<br><span>fits your life.</span></h1>
+    <p class="hero-lede">Discover meaningful opportunities with companies that value your talent. Your next big move is closer than you think.</p>
+    <form class="hero-search" action="/jobs" method="GET"><span class="search-icon">⌕</span><input name="q" aria-label="Search jobs" placeholder="Job title, skill, or company"><button class="button button-primary" type="submit">Explore jobs <span>→</span></button></form>
+    <div class="hero-meta"><span class="avatar-stack"><i>A</i><i>M</i><i>J</i></span><span>Start your next chapter today</span></div>
+  </div>
+  <div class="hero-art" aria-label="Illustration of a person finding a job">
+    <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+    <div class="art-card art-card-top"><span class="mini-icon purple">✦</span><div><b>Great opportunity!</b><small>Your skills are in demand</small></div><span class="tiny-check">✓</span></div>
+    <div class="person-illustration"><div class="person-hair"></div><div class="person-head"><div class="person-eye eye-left"></div><div class="person-eye eye-right"></div><div class="person-smile"></div></div><div class="person-neck"></div><div class="person-body"><div class="shirt-line"></div></div><div class="person-arm"></div></div>
+    <div class="art-card art-card-bottom"><div class="company-logo">✺</div><div><b>Product Designer</b><small>Creative Studio · Remote</small></div><span class="bookmark">♡</span></div>
+    <span class="spark spark-a">✦</span><span class="spark spark-b">✳</span><span class="spark spark-c">✦</span>
+  </div>
+</section>
+<section class="trust-strip"><span>YOUR CAREER, YOUR WAY</span><div class="trust-divider"></div><p>Opportunities for every kind of ambition.</p><a href="/jobs">Browse all jobs <span>→</span></a></section>
+<section class="steps-section"><div class="section-heading"><span class="eyebrow">A BETTER WAY TO WORK</span><h2>Your next move, made <span>simple.</span></h2><p>Whether you're looking for your next role or your next great hire, Easily helps you get there.</p></div><div class="steps-grid"><article class="step-card"><div class="step-icon icon-lilac">⌕</div><span class="step-number">01</span><h3>Discover</h3><p>Explore opportunities that match your skills, goals, and the way you want to work.</p></article><article class="step-card"><div class="step-icon icon-peach">↗</div><span class="step-number">02</span><h3>Make your move</h3><p>Apply with confidence and keep track of your applications in one simple place.</p></article><article class="step-card"><div class="step-icon icon-mint">✦</div><span class="step-number">03</span><h3>Grow forward</h3><p>Find a team where your ideas matter and your career can keep moving.</p></article></div></section>
+<section class="cta-band"><div><span class="eyebrow">READY WHEN YOU ARE</span><h2>Your next opportunity is out there.</h2><p>Take the first step toward work you love.</p></div><a class="button button-light" href="/jobs">Find your next job <span>→</span></a></section>
+<%- include('partials/footer') %>
